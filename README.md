@@ -1,13 +1,3 @@
-layout: default
-title: Elixir em Foco
-description: Podcast da comunidade brasileira de Elixir
-image:
-path: /images/logo_site.png
-width: 1200
-height: 630
-alt: Logo do Elixir em Foco
-
-# Elixir em Foco
 
 <img src="/images/logo.png" alt="Logo do Elixir em Foco" style="height: 100px;"/>
 
