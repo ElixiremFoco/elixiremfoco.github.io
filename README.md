@@ -22,10 +22,9 @@ Organizamos a Elixir Fortaleza Conf 2023 e a Elixir Curitiba 2024.
 
 Nossos perfis em redes sociais:
 
-- Mastodon: @redeemilias
-- Bluesky: @redeemilias
-- Twitter: @elixiremfoco
-- Facebook: elixiremfoco
+- [Elixir em Foco no Linkedin](https://www.linkedin.com/company/elixiremfoco/)
+- [Adolfo Neto no Linkedin](https://www.linkedin.com/in/adolfont)
+- [Adolfo Neto no Bluesky](https://bsky.social/adolfont.github.io)
 
 ## Equipe
 
