@@ -53,13 +53,13 @@ Este podcast é parte da [Rede Emílias de Podcasts](https://fronteirases.github
 
 [Adolfo Neto](https://adolfont.github.io/) ensina, escreve, fala (em podcasts), pesquisa e desenvolve em Elixir e Erlang. Não necessariamente nesta ordem. Atualmente professor na UTFPR.
 
-## Herminio Torres - Apresentador
+### Herminio Torres - Apresentador
 
 <img src="/images/herminio.jpg" alt="Herminio Torres" style="height: 100px;"/>
 
 Herminio Torres, desenvolvedor de software. Elixir paga meus boletos atualmente. Sou criador e idealizador do Elixercism - Grupo que ensina elixir por meio dos exercícios do exercism.io. Entusiasta de bons cafés.
 
-## Zoey Pessanha - Apresentadora
+### Zoey Pessanha - Apresentadora
 
 <img src="/images/zoey.jpg" alt="Zoey Pessanha" style="height: 100px;"/>
 
