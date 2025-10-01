@@ -31,14 +31,20 @@ Nossos perfis em redes sociais:
 
 ### Adolfo Neto - Criador e Apresentador
 
+<img src="/images/adolfo.jpg" alt="Adolfo Neto" style="height: 100px;"/>
+
+
 [Adolfo Neto](https://adolfont.github.io/) ensina, escreve, fala (em podcasts), pesquisa e desenvolve em Elixir e Erlang. Não necessariamente nesta ordem. Atualmente professor na UTFPR.
 
 ## Herminio Torres - Apresentador
+
+<img src="/images/herminio.jpg" alt="Herminio Torres" style="height: 100px;"/>
 
 Herminio Torres, desenvolvedor de software. Elixir paga meus boletos atualmente. Sou criador e idealizador do Elixercism - Grupo que ensina elixir por meio dos exercícios do exercism.io. Entusiasta de bons cafés.
 
 ## Zoey Pessanha - Apresentadora
 
+<img src="/images/zoey.jpg" alt="Zoey Pessanha" style="height: 100px;"/>
 
 Cientista da Computação em formação; fascinada por programação funcional; cozinho bem, mas isso não vem ao caso; divulgadora de programação funcional e Elixir.
 
