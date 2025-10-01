@@ -1,10 +1,17 @@
+---
+layout: default
+title: Elixir em Foco
+subtitle: O podcast da comunidade barsileira de Elixir
+thumb: /images/logo_site.png
+---
+
+Elixir em Foco é o podcast da comunidade brasileira de [Elixir](https://elixir-lang.org/), a linguagem de programação criada pelo brasileiro [José Valim](https://pt.wikipedia.org/wiki/Jos%C3%A9_Valim) que é usada por empresas de todo o mundo para o desenvolvimento de aplicações escaláveis e de fácil manutenção. O Elixir roda na máquina virtual do [Erlang](https://www.erlang.org/), conhecida por possibilitar a criação de sistemas de baixa latência, distribuídos e tolerantes a falhas. Essas características, somadas às ferramentas do Elixir, permitem que desenvolvedores sejam produtivos em diversos domínios, como desenvolvimento web, software embarcado, aprendizado de máquina, pipelines de dados e processamento multimídia, em uma ampla variedade de setores.
 
 <img src="/images/logo.png" alt="Logo do Elixir em Foco" style="height: 100px;"/>
 
 
-Elixir em Foco é o podcast da comunidade brasileira de [Elixir](https://elixir-lang.org/), a linguagem de programação criada pelo brasileiro [José Valim](https://pt.wikipedia.org/wiki/Jos%C3%A9_Valim) que é usada por empresas de todo o mundo para o desenvolvimento de aplicações escaláveis e de fácil manutenção. O Elixir roda na máquina virtual do [Erlang](https://www.erlang.org/), conhecida por possibilitar a criação de sistemas de baixa latência, distribuídos e tolerantes a falhas. Essas características, somadas às ferramentas do Elixir, permitem que desenvolvedores sejam produtivos em diversos domínios, como desenvolvimento web, software embarcado, aprendizado de máquina, pipelines de dados e processamento multimídia, em uma ampla variedade de setores.
-
 No Elixir em Foco nós conversamos principalmente com pessoas da comunidade brasileira de desenvolvedores de software Elixir, mas também abrimos espaço para pessoas que trabalham com outras linguagens como Erlang, Gleam, Clojure, Lean, Quint e outras.
+
 
 ## Onde assistir ou escutar nossos episódios
 
