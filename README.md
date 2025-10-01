@@ -1,9 +1,4 @@
----
-layout: default
-title: Elixir em Foco
-subtitle: O podcast da comunidade barsileira de Elixir
-thumb: /images/logo_site.png
----
+
 <img src="/images/logo.png" alt="Logo do Elixir em Foco" style="height: 100px;"/>
 
 
