@@ -1,24 +1,42 @@
 # Elixir em Foco
 
+<img src="/images/logo.png" alt="Logo do Elixir em Foco" style="height: 100px;"/>
 
-O podcast da comunidade brasileira de Elixir
 
-Elixir em Foco é um podcast em que conversamos com pessoas da comunidade brasileira de desenvolvedores de software sobre a linguagem de programação Elixir.
+Elixir em Foco é o podcast da comunidade brasileira de [Elixir](https://elixir-lang.org/), a linguagem de programação criada pelo brasileiro [José Valim](https://pt.wikipedia.org/wiki/Jos%C3%A9_Valim) que é usada por empresas de todo o mundo para o desenvolvimento de aplicações escaláveis e de fácil manutenção. O Elixir roda na máquina virtual do [Erlang](https://www.erlang.org/), conhecida por possibilitar a criação de sistemas de baixa latência, distribuídos e tolerantes a falhas. Essas características, somadas às ferramentas do Elixir, permitem que desenvolvedores sejam produtivos em diversos domínios, como desenvolvimento web, software embarcado, aprendizado de máquina, pipelines de dados e processamento multimídia, em uma ampla variedade de setores.
 
-Este podcast é parte da Rede Emílias de Podcasts.
+No Elixir em Foco nós conversamos principalmente com pessoas da comunidade brasileira de desenvolvedores de software Elixir, mas também abrimos espaço para pessoas que trabalham com outras linguagens como Erlang, Gleam, Clojure, Lean, Quint e outras.
 
-Participe do SE4FP!.
+## Onde assistir ou escutar nossos episódios
 
-Participe da Elixir Curitiba.
+- [YouTube: @elixiremfoco](https://www.youtube.com/@elixiremfoco)
+- [Spotify](https://open.spotify.com/show/43aDX4kajkNCKaCYpGPooJ)
+- [Spotify for Podcasters](https://creators.spotify.com/pod/profile/elixiremfoco/)
+- [RSS do Elixir em Foco](https://anchor.fm/s/4d4944e8/podcast/rss)
 
-Onde assistir ou escutar nossos episódios:
+## Apoio
 
-- Spotify for Podcasters
-- Spotify
-- YouTube: @elixiremfoco
-- RSS do Elixir em Foco
+A [Erlang Ecosystem Foundation](https://bit.ly/3Jma95g) apoia este podcast financiando o software que utilizamos para gravar os episódios. A Erlang Ecosystem Foundation é uma organização sem fins lucrativos apoiada por mais de 1.000 membros que abraçam o seu modelo de Grupos de Trabalho colaborativos, e eventos de construção de comunidades. Os membros da EEF incluem líderes da indústria que se dedicam a promover o estado da arte para Erlang, Elixir, LFE e outras tecnologias baseadas no BEAM.
 
-Organizamos a [Elixir Fortaleza Conf 2023](https://youtube.com/playlist?list=PLa5zLmv3pgCAT428zYCwzfI1ZZIwWH8aQ&si=GrlBucR0j0RPFhXR) e a [Elixir Curitiba 2024](https://elixircuritiba.github.io/2024/).
+Associe-se à Erlang Ecosystem Foundation em⁠⁠ ⁠⁠⁠<https://bit.ly/3Sl8XTO>.
+
+## Rede 
+
+Este podcast é parte da [Rede Emílias de Podcasts](https://fronteirases.github.io/redeemilias/).
+
+## Eventos
+
+### Próximos
+
+- [Elixir Curitiba 2025](https://elixircuritiba.github.io/)
+
+### Anteriores
+
+- [SE4FP 2025](https://se4fp.github.io/2025/)
+- [Elixir Curitiba 2024](https://elixircuritiba.github.io/2024/).
+- Elixir Days 2024
+- [Elixir Fortaleza Conf 2023](https://youtube.com/playlist?list=PLa5zLmv3pgCAT428zYCwzfI1ZZIwWH8aQ&si=GrlBucR0j0RPFhXR)
+
 
 ## Nossos perfis em redes sociais
 
