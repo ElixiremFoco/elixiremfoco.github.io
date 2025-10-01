@@ -1,7 +1,10 @@
+logo: /images/logo_site.png
 title: Elixir em Foco
+description: O podcast da comunidade brasileira de Elixir
 url: https://elixiremfoco.com
 plugins: 
   - jekyll-seo-tag
+
 
 defaults:
 
