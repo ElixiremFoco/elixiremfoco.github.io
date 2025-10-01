@@ -26,3 +26,22 @@ Nossos perfis em redes sociais:
 - Bluesky: @redeemilias
 - Twitter: @elixiremfoco
 - Facebook: elixiremfoco
+
+## Equipe
+
+### Adolfo Neto - Criador e Apresentador
+
+[Adolfo Neto](https://adolfont.github.io/) ensina, escreve, fala (em podcasts), pesquisa e desenvolve em Elixir e Erlang. Não necessariamente nesta ordem. Atualmente professor na UTFPR.
+
+## Herminio Torres - Apresentador
+
+Herminio Torres, desenvolvedor de software. Elixir paga meus boletos atualmente. Sou criador e idealizador do Elixercism - Grupo que ensina elixir por meio dos exercícios do exercism.io. Entusiasta de bons cafés.
+
+## Zoey Pessanha - Apresentadora
+
+
+Cientista da Computação em formação; fascinada por programação funcional; cozinho bem, mas isso não vem ao caso; divulgadora de programação funcional e Elixir.
+
+
+
+
