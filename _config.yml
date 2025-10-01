@@ -1,6 +1,7 @@
 title: Elixir em Foco
 url: https://elixiremfoco.com
-plugins: jekyll-seo-tag
+plugins: 
+  - jekyll-seo-tag
 
 defaults:
 
