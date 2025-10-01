@@ -18,13 +18,13 @@ Onde assistir ou escutar nossos episódios:
 - YouTube: @elixiremfoco
 - RSS do Elixir em Foco
 
-Organizamos a Elixir Fortaleza Conf 2023 e a Elixir Curitiba 2024.
+Organizamos a [Elixir Fortaleza Conf 2023](https://youtube.com/playlist?list=PLa5zLmv3pgCAT428zYCwzfI1ZZIwWH8aQ&si=GrlBucR0j0RPFhXR) e a [Elixir Curitiba 2024](https://elixircuritiba.github.io/2024/).
 
-Nossos perfis em redes sociais:
+## Nossos perfis em redes sociais
 
 - [Elixir em Foco no Linkedin](https://www.linkedin.com/company/elixiremfoco/)
 - [Adolfo Neto no Linkedin](https://www.linkedin.com/in/adolfont)
-- [Adolfo Neto no Bluesky](https://bsky.social/adolfont.github.io)
+- [Adolfo Neto no Bluesky](https://bsky.app/profile/adolfont.github.io)
 
 ## Equipe
 
