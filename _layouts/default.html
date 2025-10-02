@@ -27,9 +27,9 @@
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title | default: site.github.repository_name }}{% endif %}">
   <meta name="twitter:description" content="{% if page.subtitle %}{{ page.subtitle }}{% else %}{{ site.description | default: site.github.project_tagline }}{% endif %}">
   {% if page.thumb %}
-    <meta name="twitter:image" content="{{ page.thumb | absolute_url }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ page.thumb }}">
   {% else %}
-    <meta name="twitter:image" content="{{ '/images/AdolfoNeto_240x240.jpg' | absolute_url }}">
+    <meta name="twitter:image" content="{{ site.url }}/images/AdolfoNeto_240x240.jpg">
   {% endif %}
 
   <style>
@@ -156,6 +156,35 @@
       transform: rotate(20deg) scale(1.1);
     }
 
+    .language-toggle {
+      position: fixed;
+      top: 20px;
+      right: 80px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .language-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    .language-toggle a {
+      font-size: 1.8rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     main {
       padding: 20px 0;
       min-height: 60vh;
@@ -275,6 +304,13 @@
         width: 45px;
         height: 45px;
       }
+
+      .language-toggle {
+        top: 15px;
+        right: 70px;
+        width: 45px;
+        height: 45px;
+      }
     }
   </style>
 
@@ -288,6 +324,14 @@
     <span id="theme-icon">🌙</span>
   </button>
 
+  <div class="language-toggle">
+    {% if page.lang == 'pt' %}
+      <a href="/index_en.html" aria-label="Switch to English">🇬🇧</a>
+    {% else %}
+      <a href="/" aria-label="Mudar para Português">🇧🇷</a>
+    {% endif %}
+  </div>
+
   <div class="container">
     <header>
       {% if site.logo %}
@@ -298,10 +342,9 @@
       
       <p class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
 
-<!--      {% if site.github.is_user_page %}
-      <a href="https://github.com/elixirEmfoco/elixiremfoco.github.io" class="github-link">View Source Code on GitHub</a>
+      {% if site.github.is_user_page %}
+      <a href="https://github.com/adolfont/adolfont.github.io" class="github-link">View Source Code on GitHub</a>
       {% endif %}
--->
     </header>
 
     <main>
