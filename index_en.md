@@ -1,9 +1,11 @@
 ---
 layout: default
-title: Elixir em Foco
-subtitle: The podcast of the Brazilian Elixir community
-thumb: /images/logo_site.png  
+title: Elixir in Focus
+subtitle: The Brazilian Elixir community podcast
+thumb: /images/logo_site.png
+lang: en
 ---
+
 
 Elixir em Foco is the podcast of the Brazilian community of [Elixir](https://elixir-lang.org/), the programming language created by Brazilian [José Valim](https://pt.wikipedia.org/wiki/Jos%C3%A9_Valim) that is used by companies around the world to develop scalable and easy-to-maintain applications. Elixir runs on the Erlang virtual machine, known for enabling the creation of low-latency, distributed, and fault-tolerant systems. These features, combined with Elixir's tools, allow developers to be productive in a variety of domains, such as web development, embedded software, machine learning, data pipelines, and multimedia processing, across a wide range of industries.
 
