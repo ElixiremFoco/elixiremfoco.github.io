@@ -14,6 +14,8 @@ Elixir em Foco is the podcast of the Brazilian community of [Elixir](https://eli
 
 At Elixir em Foco, we mainly talk to people from the Brazilian community of Elixir software developers, but we also make room for people who work with other languages such as Erlang, Gleam, Clojure, Lean, Quint, and others.
 
+🠮 [Episodes with good subtitles in English](pages/episodes_en)
+
 
 ## Where to watch or listen to our episodes
 
