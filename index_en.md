@@ -28,7 +28,7 @@ At Elixir em Foco, we mainly talk to people from the Brazilian community of Elix
 
 The [Erlang Ecosystem Foundation](https://bit.ly/3Jma95g) supports this podcast by funding the software we use to record the episodes. The Erlang Ecosystem Foundation is a non-profit organization supported by over 1,000 members who embrace its model of collaborative Working Groups and community-building events. EEF members include industry leaders dedicated to advancing the state of the art for Erlang, Elixir, LFE, and other BEAM-based technologies.
 
-Join the Erlang Ecosystem Foundation at https://bit.ly/3Sl8XTO.
+Join the Erlang Ecosystem Foundation at <https://bit.ly/3Sl8XTO>.
 
 
 
