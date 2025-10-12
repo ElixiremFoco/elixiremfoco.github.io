@@ -40,7 +40,7 @@ This podcast is part of the [Emílias Podcast Network](https://fronteirases.gith
 
 ### Upcoming
 
-- [Elixir Curitiba 2025](https://elixircuritiba.github.io/)
+- [Elixir Curitiba 2025](https://curitiba.elixiremfoco.com)
 
 ### Past
 
