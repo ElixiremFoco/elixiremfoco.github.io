@@ -35,7 +35,7 @@ Este podcast é parte da [Rede Emílias de Podcasts](https://fronteirases.github
 
 ### Próximos
 
-- [Elixir Curitiba 2025](https://elixircuritiba.github.io/)
+- [Elixir Curitiba 2025](https://curitiba.elixiremfoco.com)
 
 ### Anteriores
 
