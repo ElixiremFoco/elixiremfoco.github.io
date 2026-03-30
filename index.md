@@ -13,6 +13,8 @@ Elixir em Foco é o podcast da comunidade brasileira de [Elixir](https://elixir-
 
 No Elixir em Foco nós conversamos principalmente com pessoas da comunidade brasileira de desenvolvedores de software Elixir, mas também abrimos espaço para pessoas que trabalham com outras linguagens como Erlang, Gleam, Clojure, Lean, Quint e outras.
 
+Data de criação: 30 de março de 2021. 
+
 
 ## Onde assistir ou escutar nossos episódios
 
