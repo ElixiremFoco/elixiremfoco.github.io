@@ -16,7 +16,7 @@ At Elixir em Foco, we mainly talk to people from the Brazilian community of Elix
 
 🠮 [Episodes with good subtitles in English](pages/episodes_en)
 
-Creation data: March 30th, 2021.
+Creation date: March 30th, 2021.
 
 
 ## Where to watch or listen to our episodes
