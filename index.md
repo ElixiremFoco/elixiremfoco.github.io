@@ -23,6 +23,14 @@ Data de criação: 30 de março de 2021.
 - [Spotify for Podcasters](https://creators.spotify.com/pod/profile/elixiremfoco/)
 - [RSS do Elixir em Foco](https://anchor.fm/s/4d4944e8/podcast/rss)
 
+## Alguns episódios
+
+###  Engenharia de Software e IA com Elixir, Juan Rivillas (Elixir BH Meetup)
+
+- [YouTube](https://youtu.be/iSio8ZfY9I4)
+- [Spotify](https://open.spotify.com/episode/37ZUlAjTyRPX0zZSfFjY0P)
+- [Spotify for Creators (com links para outras plataformas de áudio)](https://creators.spotify.com/pod/profile/elixiremfoco/episodes/Engenharia-de-Software-e-IA-com-Elixir--Juan-Rivillas-Elixir-BH-Meetup-e3k006j)
+
 ## Apoio
 
 A [Erlang Ecosystem Foundation](https://bit.ly/3Jma95g) apoia este podcast financiando o software que utilizamos para gravar os episódios. A Erlang Ecosystem Foundation é uma organização sem fins lucrativos apoiada por mais de 1.000 membros que abraçam o seu modelo de Grupos de Trabalho colaborativos, e eventos de construção de comunidades. Os membros da EEF incluem líderes da indústria que se dedicam a promover o estado da arte para Erlang, Elixir, LFE e outras tecnologias baseadas no BEAM.
