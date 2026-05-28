@@ -25,19 +25,11 @@ Data de criação: 30 de março de 2021.
 
 ## Alguns episódios
 
-###  Engenharia de Software e IA com Elixir, Juan Rivillas (Elixir BH Meetup)
-
-- [YouTube](https://youtu.be/iSio8ZfY9I4)
-- [Spotify](https://open.spotify.com/episode/37ZUlAjTyRPX0zZSfFjY0P)
-- [Spotify for Creators (com links para outras plataformas de áudio)](https://creators.spotify.com/pod/profile/elixiremfoco/episodes/Engenharia-de-Software-e-IA-com-Elixir--Juan-Rivillas-Elixir-BH-Meetup-e3k006j)
-
-### Além dos Paradigmas de Programação, Luciano Ramalho (Esquenta SE4FP 2026)
-
-- [YouTube](https://youtube.com/live/PIQhsBbW0zc)
-
-### Recuperando o poder das implantações BEAM com o DeployEx, Thiago Esteves (Erlang Solutions)
-
-- [Spotify](https://open.spotify.com/episode/5OFNWMDihBPcWTcwMJ673f)
+- [Engenharia de Software e IA com Elixir, Juan Rivillas (Elixir BH Meetup)](https://youtu.be/iSio8ZfY9I4)
+  - [Spotify](https://open.spotify.com/episode/37ZUlAjTyRPX0zZSfFjY0P)
+  - [Spotify for Creators (com links para outras plataformas de áudio)](https://creators.spotify.com/pod/profile/elixiremfoco/episodes/Engenharia-de-Software-e-IA-com-Elixir--Juan-Rivillas-Elixir-BH-Meetup-e3k006j)
+- [Além dos Paradigmas de Programação, Luciano Ramalho (Esquenta SE4FP 2026)](https://youtube.com/live/PIQhsBbW0zc)
+- [Recuperando o poder das implantações BEAM com o DeployEx, Thiago Esteves (Erlang Solutions)](https://open.spotify.com/episode/5OFNWMDihBPcWTcwMJ673f)
 
 ## Apoio
 
