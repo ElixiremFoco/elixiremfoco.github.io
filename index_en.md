@@ -18,6 +18,8 @@ At Elixir em Foco, we mainly talk to people from the Brazilian community of Elix
 
 Creation date: March 30th, 2021.
 
+[🆕 We will have an ElixirConf in Brazil 🇧🇷 in 2027! Click here to learn more](https://www.elixirconf.com.br)
+
 
 ## Where to watch or listen to our episodes
 
