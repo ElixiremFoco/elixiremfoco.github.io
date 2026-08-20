@@ -15,6 +15,8 @@ No Elixir em Foco nós conversamos principalmente com pessoas da comunidade bras
 
 Data de criação: 30 de março de 2021. 
 
+[🆕 Teremos uma ElixirConf no Brasil 🇧🇷 em 2027! Clique aqui e saiba mais](https://www.elixirconf.com.br)
+
 
 ## Onde assistir ou escutar nossos episódios
 
