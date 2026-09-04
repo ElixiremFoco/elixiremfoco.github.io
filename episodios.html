@@ -59,50 +59,77 @@
   <script>
     const rssUrl = "https://anchor.fm/s/4d4944e8/podcast/rss";
 
-    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+    // Usamos o AllOrigins como um proxy simples para contornar o bloqueio de CORS
+    // sem limitar a quantidade de episódios do XML original
+    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
 
     async function carregarPodcast() {
       try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+        const response = await fetch(proxyUrl);
+        if (!response.ok) throw new Error("Erro na requisição");
 
-        if (data.status !== 'ok') {
-          throw new Error('Não foi possível carregar o RSS.');
-        }
+        const xmlText = await response.text();
+        
+        // Converte o texto XML em um documento legível pelo navegador
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, "text/xml");
 
-        // Define o título da página com o nome do Podcast
-        document.getElementById('podcast-title').innerText = data.feed.title;
+        // Define o título do Podcast
+        const channelTitle = xmlDoc.querySelector("channel > title")?.textContent || "Podcast";
+        document.getElementById('podcast-title').innerText = channelTitle;
 
         const container = document.getElementById('episodes-container');
         container.classList.remove('loading');
-        container.innerHTML = ''; // Limpa o aviso de carregamento
+        container.innerHTML = '';
 
-        // Iterar sobre cada episódio (item) do feed
-        data.items.forEach(item => {
+        // Seleciona TODOS os itens/episódios do XML
+        const items = xmlDoc.querySelectorAll("item");
+
+        if (items.length === 0) {
+          container.innerText = "Nenhum episódio encontrado no feed.";
+          return;
+        }
+
+        items.forEach(item => {
           const episodeElement = document.createElement('article');
           episodeElement.className = 'episodio';
 
-          // Formatar a data
-          const pubDate = new Date(item.pubDate).toLocaleDateString('pt-BR', {
-            day: '2-digit',
-            month: 'long',
-            year: 'numeric'
-          });
+          const title = item.querySelector("title")?.textContent || "Sem título";
+          const pubDateText = item.querySelector("pubDate")?.textContent;
+          
+          // Tenta pegar a descrição (seja <description> ou <content:encoded>)
+          const description = item.querySelector("encoded")?.textContent 
+                           || item.querySelector("description")?.textContent 
+                           || "Sem descrição disponível.";
 
-          // Preencher o HTML do episódio
+          // Formatar a data
+          let pubDateFormatted = "";
+          if (pubDateText) {
+            const parsedDate = new Date(pubDateText);
+            if (!isNaN(parsedDate)) {
+              pubDateFormatted = parsedDate.toLocaleDateString('pt-BR', {
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric'
+              });
+            } else {
+              pubDateFormatted = pubDateText;
+            }
+          }
+
           episodeElement.innerHTML = `
-            <h2>${item.title}</h2>
-            <div class="data">Publicado em: ${pubDate}</div>
-            <div class="descricao">${item.description}</div>
+            <h2>${title}</h2>
+            ${pubDateFormatted ? `<div class="data">Publicado em: ${pubDateFormatted}</div>` : ''}
+            <div class="descricao">${description}</div>
           `;
 
           container.appendChild(episodeElement);
         });
 
       } catch (error) {
-        console.error("Erro ao carregar os episódios:", error);
+        console.error("Erro ao carregar o RSS:", error);
         document.getElementById('episodes-container').innerText = 
-          'Ocorreu um erro ao carregar os episódios. Verifique o link do RSS.';
+          'Ocorreu um erro ao carregar todos os episódios. Verifique a URL do seu RSS.';
       }
     }
 
