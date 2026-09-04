@@ -1,173 +1,387 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Episódios do Elixir em Foco</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      color: #1a1a1a;
-      margin-bottom: 30px;
-    }
-    .loading {
-      text-align: center;
-      font-size: 1.2rem;
-      color: #666;
-    }
-    .episodio {
-      background: #ffffff;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-      border: 1px solid #e1e4e8;
-    }
-    .episodio h2 {
-      margin-top: 0;
-      color: #4b275f; /* Tom inspirado na cor do Elixir */
-      font-size: 1.3rem;
-    }
-    .data {
-      font-size: 0.85rem;
-      color: #6c757d;
-      margin-bottom: 12px;
-    }
-    .descricao {
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
-    .descricao img {
-      max-width: 100%;
-      height: auto;
-    }
-    .btn-container {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .btn-carregar {
-      background-color: #4b275f;
-      color: #ffffff;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .btn-carregar:hover {
-      background-color: #361b45;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elixir em Foco — Episódios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #140e1c;
+    --bg-soft: #1c1428;
+    --line: #33263f;
+    --ink: #f2ecf7;
+    --ink-dim: #b6a6c7;
+    --ink-faint: #7d6c92;
+    --accent: #b98af0;
+    --accent-dim: #6f4f92;
+    --max-w: 720px;
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(185,138,240,0.14), transparent 60%);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a{ color: var(--accent); text-decoration-color: var(--accent-dim); text-underline-offset: 3px; }
+  a:hover{ text-decoration-color: var(--accent); }
+
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    padding: 76px 0 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mark{
+    width: 34px; height: 34px;
+    margin-bottom: 28px;
+  }
+  h1.title{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    line-height: 1.05;
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+  p.lede{
+    font-size: 1.05rem;
+    color: var(--ink-dim);
+    max-width: 58ch;
+    margin: 0 0 28px;
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+  .meta-row span b{ color: var(--ink-dim); font-weight: 500; }
+
+  /* ---------- Controls ---------- */
+  .controls{
+    position: sticky; top: 0; z-index: 5;
+    background: rgba(20,14,28,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+  }
+  .controls input{
+    width:100%;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    padding: 11px 14px;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color .15s ease;
+  }
+  .controls input::placeholder{ color: var(--ink-faint); }
+  .controls input:focus{ border-color: var(--accent-dim); }
+  .count{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    margin-top: 8px;
+  }
+
+  /* ---------- Episode list ---------- */
+  main{ padding: 8px 0 100px; }
+
+  .ep{
+    padding: 34px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 22px;
+  }
+  .ep:last-child{ border-bottom: none; }
+
+  .ep-when{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    padding-top: 4px;
+    line-height: 1.6;
+  }
+  .ep-when .dur{ color: var(--accent); display:block; margin-top: 2px; }
+
+  .ep-title{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.18rem;
+    line-height: 1.32;
+    margin: 0 0 10px;
+  }
+  .ep-title a{ color: var(--ink); text-decoration: none; }
+  .ep-title a:hover{ color: var(--accent); }
+
+  details.desc summary{
+    cursor: pointer;
+    list-style: none;
+    color: var(--ink-faint);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+    width: fit-content;
+  }
+  details.desc summary::-webkit-details-marker{ display:none; }
+  details.desc summary::before{
+    content: '+';
+    color: var(--accent);
+    font-family: 'IBM Plex Mono', monospace;
+    width: 12px;
+  }
+  details.desc[open] summary::before{ content: '–'; }
+  details.desc[open] summary{ margin-bottom: 12px; }
+
+  .desc-body{
+    font-size: 0.95rem;
+    color: var(--ink-dim);
+    max-width: 62ch;
+  }
+  .desc-body p{ margin: 0 0 0.9em; }
+  .desc-body ul, .desc-body ol{ margin: 0 0 0.9em; padding-left: 1.2em; }
+  .desc-body li{ margin-bottom: 0.35em; }
+  .desc-body a{ word-break: break-word; }
+  .desc-body strong{ color: var(--ink); }
+
+  /* ---------- States ---------- */
+  .state{
+    padding: 60px 0;
+    color: var(--ink-faint);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+  }
+  .state.error{ color: #e39a9a; }
+  .state a{ color: var(--accent); }
+
+  .spinner{
+    width: 14px; height: 14px;
+    border: 2px solid var(--accent-dim);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: -2px;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 28px 0 60px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 560px){
+    .ep{ grid-template-columns: 1fr; gap: 8px; }
+    .ep-when{ padding-top: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .spinner{ animation: none; }
+  }
+</style>
 </head>
 <body>
 
-  <h1 id="podcast-title">Elixir em Foco</h1>
-  <div id="episodes-container" class="loading">Buscando episódios...</div>
-  
-  <div class="btn-container">
-    <button id="btn-mais" class="btn-carregar" style="display: none;" onclick="mostrarProximaPagina()">
-      Carregar mais episódios
-    </button>
+<div class="wrap">
+  <header class="hero">
+    <svg class="mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 2C12 2 5 10.5 5 15.2C5 19.05 8.13 22 12 22C15.87 22 19 19.05 19 15.2C19 10.5 12 2 12 2Z" stroke="#b98af0" stroke-width="1.4"/>
+    </svg>
+    <h1 class="title">Elixir em Foco</h1>
+    <p class="lede">Conversas com a comunidade brasileira de desenvolvedores sobre a linguagem funcional e concorrente Elixir. Episódios mensais, publicados na primeira quarta-feira do mês.</p>
+    <div class="meta-row" id="meta-row">
+      <span><span class="spinner"></span>carregando feed…</span>
+    </div>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Buscar por título, convidado ou tema…" autocomplete="off">
+    <div class="count" id="count"></div>
   </div>
 
-  <script>
-    const rssUrl = "https://anchor.fm/s/4d4944e8/podcast/rss";
-    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
+  <main id="episodes">
+    <div class="state"><span class="spinner"></span>Buscando episódios em anchor.fm/s/4d4944e8/podcast/rss…</div>
+  </main>
 
-    const EPISODIOS_POR_PAGINA = 10;
-    let todosEpisodios = [];
-    let indiceAtual = 0;
+  <footer>
+    fonte: <a href="https://anchor.fm/s/4d4944e8/podcast/rss" target="_blank" rel="noopener">anchor.fm/s/4d4944e8/podcast/rss</a> · gerado a partir do RSS ao carregar a página
+  </footer>
+</div>
 
-    async function carregarPodcast() {
-      try {
-        const response = await fetch(proxyUrl);
-        if (!response.ok) throw new Error("Erro na requisição");
+<script>
+const FEED_URL = "https://anchor.fm/s/4d4944e8/podcast/rss";
 
-        const xmlText = await response.text();
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+// Try several strategies to get around CORS, in order.
+const PROXIES = [
+  url => url, // direct, in case the feed ever allows it
+  url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+  url => `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+  url => `https://r.jina.ai/${url}`,
+];
 
-        // Define o título do canal se disponível no XML, mantendo fallback
-        const channelTitle = xmlDoc.querySelector("channel > title")?.textContent || "Elixir em Foco";
-        document.getElementById('podcast-title').innerText = channelTitle;
+let allEpisodes = [];
 
-        todosEpisodios = Array.from(xmlDoc.querySelectorAll("item"));
+function stripCdata(node){ return node ? node.textContent.trim() : ""; }
 
-        const container = document.getElementById('episodes-container');
-        container.classList.remove('loading');
-        container.innerHTML = '';
+function formatDate(pubDate){
+  const d = new Date(pubDate);
+  if (isNaN(d)) return "";
+  return d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' }).replace('.', '');
+}
 
-        if (todosEpisodios.length === 0) {
-          container.innerText = "Nenhum episódio encontrado no feed.";
-          return;
-        }
-
-        // Exibe os primeiros 10 episódios imediatamente
-        mostrarProximaPagina();
-
-      } catch (error) {
-        console.error("Erro ao carregar o RSS:", error);
-        document.getElementById('episodes-container').innerText = 
-          'Ocorreu um erro ao carregar os episódios do Elixir em Foco.';
+function sanitizeDescriptionHTML(html){
+  // Keep it simple: strip script/style/iframe tags, keep basic formatting + links.
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  tmp.querySelectorAll('script,style,iframe,object,embed').forEach(el => el.remove());
+  tmp.querySelectorAll('*').forEach(el => {
+    [...el.attributes].forEach(attr => {
+      if (attr.name === 'href') {
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener noreferrer');
+      } else if (attr.name !== 'target' && attr.name !== 'rel') {
+        el.removeAttribute(attr.name);
       }
+    });
+  });
+  return tmp.innerHTML;
+}
+
+function parseFeed(xmlText){
+  const doc = new DOMParser().parseFromString(xmlText, "application/xml");
+  if (doc.querySelector('parsererror')) throw new Error('Falha ao interpretar o XML do feed.');
+
+  const channel = doc.querySelector('channel');
+  const podTitle = stripCdata(channel.querySelector(':scope > title'));
+  const podDesc = stripCdata(channel.querySelector(':scope > description'));
+
+  const items = [...doc.querySelectorAll('item')];
+  const episodes = items.map(item => {
+    const title = stripCdata(item.querySelector('title'));
+    const link = stripCdata(item.querySelector('link'));
+    const pubDate = stripCdata(item.querySelector('pubDate'));
+    const descRaw = item.querySelector('description') ? item.querySelector('description').textContent : "";
+    const duration = stripCdata(item.getElementsByTagNameNS('*','duration')[0]);
+    const episodeNum = stripCdata(item.getElementsByTagNameNS('*','episode')[0]);
+    return { title, link, pubDate, descHTML: sanitizeDescriptionHTML(descRaw), duration, episodeNum };
+  });
+
+  return { podTitle, podDesc, episodes };
+}
+
+function renderMeta(episodes){
+  const first = episodes[episodes.length - 1];
+  const firstYear = first ? new Date(first.pubDate).getFullYear() : "";
+  const metaRow = document.getElementById('meta-row');
+  metaRow.innerHTML = `
+    <span><b>${episodes.length}</b> episódios</span>
+    <span>desde <b>${firstYear || "—"}</b></span>
+    <span><a href="https://www.elixiremfoco.com/" target="_blank" rel="noopener">elixiremfoco.com</a></span>
+  `;
+}
+
+function renderEpisodes(episodes){
+  const main = document.getElementById('episodes');
+  if (episodes.length === 0){
+    main.innerHTML = `<div class="state">Nenhum episódio encontrado para essa busca.</div>`;
+    return;
+  }
+  main.innerHTML = episodes.map(ep => `
+    <article class="ep">
+      <div class="ep-when">
+        ${formatDate(ep.pubDate)}
+        ${ep.duration ? `<span class="dur">${ep.duration}</span>` : ""}
+      </div>
+      <div>
+        <h2 class="ep-title"><a href="${ep.link}" target="_blank" rel="noopener">${ep.title}</a></h2>
+        <details class="desc">
+          <summary>ver descrição</summary>
+          <div class="desc-body">${ep.descHTML}</div>
+        </details>
+      </div>
+    </article>
+  `).join('');
+}
+
+function updateCount(shown, total){
+  document.getElementById('count').textContent =
+    shown === total ? `${total} episódios` : `${shown} de ${total} episódios`;
+}
+
+function applySearch(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const filtered = q
+    ? allEpisodes.filter(ep =>
+        ep.title.toLowerCase().includes(q) ||
+        ep.descHTML.toLowerCase().includes(q))
+    : allEpisodes;
+  renderEpisodes(filtered);
+  updateCount(filtered.length, allEpisodes.length);
+}
+
+async function tryFetch(url){
+  let lastErr;
+  for (const wrap of PROXIES){
+    try {
+      const res = await fetch(wrap(url), { headers: { 'Accept': 'application/xml, text/xml, */*' } });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+      if (!text || text.length < 50) throw new Error('Resposta vazia');
+      return text;
+    } catch (err){
+      lastErr = err;
     }
+  }
+  throw lastErr || new Error('Não foi possível buscar o feed.');
+}
 
-    function mostrarProximaPagina() {
-      const container = document.getElementById('episodes-container');
-      const btnMais = document.getElementById('btn-mais');
+async function init(){
+  try {
+    const xmlText = await tryFetch(FEED_URL);
+    const { episodes } = parseFeed(xmlText);
+    allEpisodes = episodes;
+    renderMeta(episodes);
+    renderEpisodes(episodes);
+    updateCount(episodes.length, episodes.length);
+    document.getElementById('search').addEventListener('input', applySearch);
+  } catch (err){
+    document.getElementById('meta-row').innerHTML = `<span>—</span>`;
+    document.getElementById('episodes').innerHTML = `
+      <div class="state error">
+        Não foi possível carregar o feed automaticamente (${err.message}).<br><br>
+        Isso costuma acontecer por restrições de CORS do navegador ao acessar
+        <a href="${FEED_URL}" target="_blank" rel="noopener">${FEED_URL}</a> diretamente de um arquivo local.<br><br>
+        Tente abrir esta página hospedada em um servidor (não como arquivo local),
+        ou abra o link do RSS diretamente para conferir o conteúdo.
+      </div>`;
+  }
+}
 
-      const proximos = todosEpisodios.slice(indiceAtual, indiceAtual + EPISODIOS_POR_PAGINA);
-
-      proximos.forEach(item => {
-        const episodeElement = document.createElement('article');
-        episodeElement.className = 'episodio';
-
-        const title = item.querySelector("title")?.textContent || "Sem título";
-        const pubDateText = item.querySelector("pubDate")?.textContent;
-        const description = item.querySelector("encoded")?.textContent 
-                         || item.querySelector("description")?.textContent 
-                         || "Sem descrição disponível.";
-
-        let pubDateFormatted = "";
-        if (pubDateText) {
-          const parsedDate = new Date(pubDateText);
-          if (!isNaN(parsedDate)) {
-            pubDateFormatted = parsedDate.toLocaleDateString('pt-BR', {
-              day: '2-digit',
-              month: 'long',
-              year: 'numeric'
-            });
-          }
-        }
-
-        episodeElement.innerHTML = `
-          <h2>${title}</h2>
-          ${pubDateFormatted ? `<div class="data">Publicado em: ${pubDateFormatted}</div>` : ''}
-          <div class="descricao">${description}</div>
-        `;
-
-        container.appendChild(episodeElement);
-      });
-
-      indiceAtual += EPISODIOS_POR_PAGINA;
-
-      if (indiceAtual < todosEpisodios.length) {
-        btnMais.style.display = "inline-block";
-      } else {
-        btnMais.style.display = "none";
-      }
-    }
-
-    carregarPodcast();
-  </script>
+init();
+</script>
 </body>
 </html>
