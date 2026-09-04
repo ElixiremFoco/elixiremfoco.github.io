@@ -50,6 +50,7 @@ Este podcast é parte da [Rede Emílias de Podcasts](https://fronteirases.github
 ### Próximos
 
 - [SE4FP 2026](https://se4fp.github.io/2026/)
+- [ElixirConf Brasil 2027](https://www.elixirconf.com.br))
 
 ### Anteriores
 
