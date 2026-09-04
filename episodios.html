@@ -33,7 +33,7 @@
     }
     .episodio h2 {
       margin-top: 0;
-      color: #0056b3;
+      color: #4b275f; /* Tom inspirado na cor do Elixir */
       font-size: 1.3rem;
     }
     .data {
@@ -49,19 +49,43 @@
       max-width: 100%;
       height: auto;
     }
+    .btn-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .btn-carregar {
+      background-color: #4b275f;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .btn-carregar:hover {
+      background-color: #361b45;
+    }
   </style>
 </head>
 <body>
 
-  <h1 id="podcast-title">Carregando Podcast...</h1>
+  <h1 id="podcast-title">Elixir em Foco</h1>
   <div id="episodes-container" class="loading">Buscando episódios...</div>
+  
+  <div class="btn-container">
+    <button id="btn-mais" class="btn-carregar" style="display: none;" onclick="mostrarProximaPagina()">
+      Carregar mais episódios
+    </button>
+  </div>
 
   <script>
     const rssUrl = "https://anchor.fm/s/4d4944e8/podcast/rss";
-
-    // Usamos o AllOrigins como um proxy simples para contornar o bloqueio de CORS
-    // sem limitar a quantidade de episódios do XML original
     const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
+
+    const EPISODIOS_POR_PAGINA = 10;
+    let todosEpisodios = [];
+    let indiceAtual = 0;
 
     async function carregarPodcast() {
       try {
@@ -69,67 +93,77 @@
         if (!response.ok) throw new Error("Erro na requisição");
 
         const xmlText = await response.text();
-        
-        // Converte o texto XML em um documento legível pelo navegador
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xmlText, "text/xml");
 
-        // Define o título do Podcast
-        const channelTitle = xmlDoc.querySelector("channel > title")?.textContent || "Podcast";
+        // Define o título do canal se disponível no XML, mantendo fallback
+        const channelTitle = xmlDoc.querySelector("channel > title")?.textContent || "Elixir em Foco";
         document.getElementById('podcast-title').innerText = channelTitle;
+
+        todosEpisodios = Array.from(xmlDoc.querySelectorAll("item"));
 
         const container = document.getElementById('episodes-container');
         container.classList.remove('loading');
         container.innerHTML = '';
 
-        // Seleciona TODOS os itens/episódios do XML
-        const items = xmlDoc.querySelectorAll("item");
-
-        if (items.length === 0) {
+        if (todosEpisodios.length === 0) {
           container.innerText = "Nenhum episódio encontrado no feed.";
           return;
         }
 
-        items.forEach(item => {
-          const episodeElement = document.createElement('article');
-          episodeElement.className = 'episodio';
-
-          const title = item.querySelector("title")?.textContent || "Sem título";
-          const pubDateText = item.querySelector("pubDate")?.textContent;
-          
-          // Tenta pegar a descrição (seja <description> ou <content:encoded>)
-          const description = item.querySelector("encoded")?.textContent 
-                           || item.querySelector("description")?.textContent 
-                           || "Sem descrição disponível.";
-
-          // Formatar a data
-          let pubDateFormatted = "";
-          if (pubDateText) {
-            const parsedDate = new Date(pubDateText);
-            if (!isNaN(parsedDate)) {
-              pubDateFormatted = parsedDate.toLocaleDateString('pt-BR', {
-                day: '2-digit',
-                month: 'long',
-                year: 'numeric'
-              });
-            } else {
-              pubDateFormatted = pubDateText;
-            }
-          }
-
-          episodeElement.innerHTML = `
-            <h2>${title}</h2>
-            ${pubDateFormatted ? `<div class="data">Publicado em: ${pubDateFormatted}</div>` : ''}
-            <div class="descricao">${description}</div>
-          `;
-
-          container.appendChild(episodeElement);
-        });
+        // Exibe os primeiros 10 episódios imediatamente
+        mostrarProximaPagina();
 
       } catch (error) {
         console.error("Erro ao carregar o RSS:", error);
         document.getElementById('episodes-container').innerText = 
-          'Ocorreu um erro ao carregar todos os episódios. Verifique a URL do seu RSS.';
+          'Ocorreu um erro ao carregar os episódios do Elixir em Foco.';
+      }
+    }
+
+    function mostrarProximaPagina() {
+      const container = document.getElementById('episodes-container');
+      const btnMais = document.getElementById('btn-mais');
+
+      const proximos = todosEpisodios.slice(indiceAtual, indiceAtual + EPISODIOS_POR_PAGINA);
+
+      proximos.forEach(item => {
+        const episodeElement = document.createElement('article');
+        episodeElement.className = 'episodio';
+
+        const title = item.querySelector("title")?.textContent || "Sem título";
+        const pubDateText = item.querySelector("pubDate")?.textContent;
+        const description = item.querySelector("encoded")?.textContent 
+                         || item.querySelector("description")?.textContent 
+                         || "Sem descrição disponível.";
+
+        let pubDateFormatted = "";
+        if (pubDateText) {
+          const parsedDate = new Date(pubDateText);
+          if (!isNaN(parsedDate)) {
+            pubDateFormatted = parsedDate.toLocaleDateString('pt-BR', {
+              day: '2-digit',
+              month: 'long',
+              year: 'numeric'
+            });
+          }
+        }
+
+        episodeElement.innerHTML = `
+          <h2>${title}</h2>
+          ${pubDateFormatted ? `<div class="data">Publicado em: ${pubDateFormatted}</div>` : ''}
+          <div class="descricao">${description}</div>
+        `;
+
+        container.appendChild(episodeElement);
+      });
+
+      indiceAtual += EPISODIOS_POR_PAGINA;
+
+      if (indiceAtual < todosEpisodios.length) {
+        btnMais.style.display = "inline-block";
+      } else {
+        btnMais.style.display = "none";
       }
     }
 
