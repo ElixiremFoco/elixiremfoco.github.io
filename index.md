@@ -63,9 +63,9 @@ Este podcast é parte da [Rede Emílias de Podcasts](https://fronteirases.github
 
 ## Nossos perfis em redes sociais
 
+- [Adolfo Neto no Bluesky](https://bsky.app/profile/adolfont.github.io)
 - [Elixir em Foco no Linkedin](https://www.linkedin.com/company/elixiremfoco/)
 - [Adolfo Neto no Linkedin](https://www.linkedin.com/in/adolfont)
-- [Adolfo Neto no Bluesky](https://bsky.app/profile/adolfont.github.io)
 
 ## Equipe
 
