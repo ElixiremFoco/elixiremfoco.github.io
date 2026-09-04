@@ -25,6 +25,8 @@ Data de criação: 30 de março de 2021.
 - [Spotify for Podcasters](https://creators.spotify.com/pod/profile/elixiremfoco/)
 - [RSS do Elixir em Foco](https://anchor.fm/s/4d4944e8/podcast/rss)
 
+- [Página com todos os episódios](https://elixiremfoco.github.io/episodios/)
+
 ## Alguns episódios
 
 - [Engenharia de Software e IA com Elixir, Juan Rivillas (Elixir BH Meetup)](https://youtu.be/iSio8ZfY9I4)
