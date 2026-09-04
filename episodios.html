@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +14,7 @@
   }
   html[data-theme="dark"]{
     --bg: #140e1c;
+    --bg-rgb: 20,14,28;
     --bg-soft: #1c1428;
     --line: #33263f;
     --ink: #f2ecf7;
@@ -28,6 +27,7 @@
   }
   html[data-theme="light"]{
     --bg: #faf7fc;
+    --bg-rgb: 250,247,252;
     --bg-soft: #f1ebf8;
     --line: #e1d5ee;
     --ink: #261b33;
@@ -111,7 +111,7 @@
   /* ---------- Controls ---------- */
   .controls{
     position: sticky; top: 0; z-index: 5;
-    background: rgba(20,14,28,0.92);
+    background: rgba(var(--bg-rgb),0.92);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--line);
     padding: 16px 0;
