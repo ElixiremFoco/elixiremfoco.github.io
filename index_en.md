@@ -42,12 +42,9 @@ This podcast is part of the [Emílias Podcast Network](https://fronteirases.gith
 
 ## Events
 
-### Upcoming
-
-- [Elixir Curitiba 2025](https://curitiba.elixiremfoco.com)
-
 ### Past
 
+- [Elixir Curitiba 2025](https://curitiba.elixiremfoco.com)
 - [SE4FP 2025](https://se4fp.github.io/2025/)
 - [Elixir Curitiba 2024](https://elixircuritiba.github.io/2024/).
 - Elixir Days 2024
