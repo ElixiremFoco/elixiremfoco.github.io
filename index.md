@@ -68,6 +68,12 @@ Este podcast é parte da [Rede Emílias de Podcasts](https://fronteirases.github
 - [Elixir em Foco no Linkedin](https://www.linkedin.com/company/elixiremfoco/)
 - [Adolfo Neto no Linkedin](https://www.linkedin.com/in/adolfont)
 
+## Grupos da Comunidade
+
+- [Elixir Brasil no Telegram](http://t.me/elixirbr)
+- [Elixir World on Telegram](http://t.me/elixir_world)
+
+
 ## Equipe
 
 ### Adolfo Neto - Criador e Apresentador
